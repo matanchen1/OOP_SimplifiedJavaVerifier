@@ -1,0 +1,74 @@
+
+=============================
+= File description =
+=============================
+
+ ***JAVA FILES***
+
+ -main package14 * Sjavac - Driver Class of the program.
+* SJavaException - Main S-JAVA syntax exception.
+* KeywordCheck - This class responsible of validating all the reserved keywords in s-java.
+ * InvalidUsageException - This class is evoked when the program gets an invalid number of arguments.
+
+ -parser package20
+ * Parser - A Singleton class responsible for every parsing process in the program. This class gets a line index,
+ and return a LineOperation object of this line.
+ * Regex - This class holds every regex related items the program uses.
+ * InvalidConditionException - This class represents a illegal condition inside if \ while block.
+* InvalidMethodParamException: - This class represents illegal method parameter exception.
+
+ -Parser//preparsing package28 * Cleaner - This class responsible of cleaning the lines from empty lines, comments line.
+ * FileReader - Static class responsible for reading an entire file.
+
+ -scope package32
+ * Scope - This class represent a Scope abstract class.
+ super class of GlobalScope and MethodsScope.
+ * GlobalScope - This class represent a single GlobalScope.
+ extend of Scope class. and its the only class that can create Method object.
+ * MethodsScope - This class represent a single Method Scope class.(if/while scope or the first Scope of the
+ method) extend of Scope class.
+ * Method - This class represent a single Method object.
+ * InvalidUninitializedAssignmentsException - This class represent an exception of invalid Assignments when an
+ attempt is made to assign a value to variable while the value is an uninitialized variable.
+ * InvalidReturnException - This class represent an InvalidReturnException.
+ * InvalidMethodLineFormatException - This class represent an Invalid Method Line Format Exception
+ * InvalidKeyWordUseException - This class represent an exception of invalid use of "KeyWords" - reserved name
+ in SJava.
+
+47 -variable package48
+49 * Variable - This class represent a single Variable object.
+50 * VariableFactory - A Static factory class, responsible of creating Variable objects out of Operation's objects.
+51 * Type - This enum represents every possible type in s-java.
+52 * InvalidVariableNameException This class represent an exception that evoked while attempting to declaration
+53 or assignment a variable with illegal name.
+54 * InvalidVariableAssignmentException - This class represent an exception that evoked while attempting to make
+55 an illegal variable assignment.
+56 * InvalidUninitializedFinalVariableException - This class represent an exception that evoked while attempting
+57 to declaration on Final variable without assignment.
+58 * InvalidFinalVariableAssignmentException - This class represent a exception that evoked while attempting to
+59 preform an assignment into a final variable.
+4
+60 * DuplicatedVariableNameException This class represent a exception that evoked while attempt to initialize a
+61 variable with a name that is already taken by another variable (in the same scope).
+62
+63 -operation package64
+65 * LineOperation - An abstract class of every possible operation the sjava file describes, method init, var init,
+66 method call and so on.
+67 * LineType - This enum class specifies all legal line types in sjava.
+ * BlockCloseLineOperation - This class represents a line that closes a block in sjava.
+ * IfWhileBlockLineOperation - This class represents a line that opens if\while block
+ * MethodCallLineOperation - This class represents a line of method call.
+ * MethodInitLineOperation - This class represents method declaration line.
+ * ReturnLineOperation - This class represents a return line.
+* UnknownLineOperation - This class represents an illegal line in sjava.
+ * VarAssignmentLineOperation - This class represents a variable assignment line.
+ * VarDeclarationLineOperation - This class represents a variable declaration line.
+
+ -analyzer package78
+ * LinesAnalyzer - This class represent an abstract LinesAnalyzer class. super of GlobalAnalyzer and
+ MethodsAnalyzer class
+ * GlobalAnalyzer - This class represent a GlobalAnalyzer class, extend of LinesAnalyzer class.
+ * MethodsAnalyzer - This class represent a MethodsAnalyzer object, extend of LinesAnalyzer class.
+ * InvalidLineFormatException - This class represents illegal line format error.
+ * InvalidMethodCallException - This class is evoked while recognizing an invalid method call.
+* DuplicatedMethodNameException - This class represents duplicate method names

@@ -1,0 +1,30 @@
+GlobalAnalyzer globalAnalyzer = new GlobalAnalyzer(lines);
+
+
+
+globalAnalyzer.getGlobalVars(); =>
+globalAnalyzer.getMethods(); =>
+
+
+int a = 5, b, c;
+
+[DECLARATION, NN, INT, a, "5"]
+
+void foo(int a){
+
+["foo", [[DECLARATION, NN, INT, a, null],[DECLARATION, NN, INT, a, null]]
+
+type of line:
+	VAR_DEC, VAR_ASSIGN, RETURN, METHOD_INIT, METHOD_CALL, OPEN_IF_WHILE_SCOPE, CLOSE_SCOPE, UNKNOWN_PATTERN]
+
+
+
+[VAR_DEC, varName, FINAL, INT, a, "b"]
+[VAR_ASSIGN,varName, value]
+[METHOD_INIT, methodName, [VAR_DEC,...,VAR_DEC],beginIndex, endIndex]
+[METHOD_CALL, methodName, [value1, ...., valuen]]
+[OPEN_IF_WHILE_SCOPE,[cond1, cond2,...,condn]]
+
+[RETURN]
+[CLOSE_SCOPE]
+[UNKNOWN_PATTERN]
