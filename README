@@ -35,26 +35,26 @@
  * InvalidKeyWordUseException - This class represent an exception of invalid use of "KeyWords" - reserved name
  in SJava.
 
-47 -variable package48
-49 * Variable - This class represent a single Variable object.
-50 * VariableFactory - A Static factory class, responsible of creating Variable objects out of Operation's objects.
-51 * Type - This enum represents every possible type in s-java.
-52 * InvalidVariableNameException This class represent an exception that evoked while attempting to declaration
-53 or assignment a variable with illegal name.
-54 * InvalidVariableAssignmentException - This class represent an exception that evoked while attempting to make
-55 an illegal variable assignment.
-56 * InvalidUninitializedFinalVariableException - This class represent an exception that evoked while attempting
-57 to declaration on Final variable without assignment.
-58 * InvalidFinalVariableAssignmentException - This class represent a exception that evoked while attempting to
-59 preform an assignment into a final variable.
-4
-60 * DuplicatedVariableNameException This class represent a exception that evoked while attempt to initialize a
-61 variable with a name that is already taken by another variable (in the same scope).
-62
-63 -operation package64
-65 * LineOperation - An abstract class of every possible operation the sjava file describes, method init, var init,
-66 method call and so on.
-67 * LineType - This enum class specifies all legal line types in sjava.
+ -variable package48
+ * Variable - This class represent a single Variable object.
+ * VariableFactory - A Static factory class, responsible of creating Variable objects out of Operation's objects.
+ * Type - This enum represents every possible type in s-java.
+ * InvalidVariableNameException This class represent an exception that evoked while attempting to declaration
+ or assignment a variable with illegal name.
+ * InvalidVariableAssignmentException - This class represent an exception that evoked while attempting to make
+ an illegal variable assignment.
+ * InvalidUninitializedFinalVariableException - This class represent an exception that evoked while attempting
+   to declaration on Final variable without assignment.
+* InvalidFinalVariableAssignmentException - This class represent a exception that evoked while attempting to
+ preform an assignment into a final variable.
+
+ * DuplicatedVariableNameException This class represent a exception that evoked while attempt to initialize a
+ variable with a name that is already taken by another variable (in the same scope).
+
+ -operation package64
+* LineOperation - An abstract class of every possible operation the sjava file describes, method init, var init,
+method call and so on.
+ * LineType - This enum class specifies all legal line types in sjava.
  * BlockCloseLineOperation - This class represents a line that closes a block in sjava.
  * IfWhileBlockLineOperation - This class represents a line that opens if\while block
  * MethodCallLineOperation - This class represents a line of method call.
